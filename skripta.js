@@ -9,8 +9,18 @@ window.addEventListener('load', function() {
         document.getElementById("barve").appendChild(input);
 	}
 	
+	var sprazniSeznamBarv= function(event) {
+		var span = document.getElementById("barve")
+		while (span.firstChild) {
+			span.removeChild(span.firstChild);
+		}
+	}
+	
 	document.querySelector("#novaBarva") 
 		.addEventListener('click', dodajBarvo);
+	
+	document.querySelector("#odstraniBarve") 
+		.addEventListener('click', sprazniSeznamBarv);
 		
 	//Odstrani barve
 	
