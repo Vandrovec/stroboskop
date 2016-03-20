@@ -9,20 +9,22 @@ window.addEventListener('load', function() {
         document.getElementById("barve").appendChild(input);
 	}
 	
+
+	document.querySelector("#novaBarva") 
+		.addEventListener('click', dodajBarvo);
+	
+
+		
+	//Odstrani barve
+	document.querySelector("#odstraniBarve") 
+		.addEventListener('click', sprazniSeznamBarv);
+	
 	var sprazniSeznamBarv= function(event) {
 		var span = document.getElementById("barve")
 		while (span.firstChild) {
 			span.removeChild(span.firstChild);
 		}
 	}
-	
-	document.querySelector("#novaBarva") 
-		.addEventListener('click', dodajBarvo);
-	
-	document.querySelector("#odstraniBarve") 
-		.addEventListener('click', sprazniSeznamBarv);
-		
-	//Odstrani barve
 	
 	//Stroboskop
 	var vrednosti = [];
@@ -60,8 +62,8 @@ window.addEventListener('load', function() {
 			vrednosti.push(barva.innerHTML);
 		}
 		
-		minCas = 1000;
-		maxCas = 1000;
+		minCas = document.getElementById("min").value;
+		maxCas = document.getElementById("max").value;
 		spremeniBarvo(0);
 		
 		var start = document.querySelector("#start");
